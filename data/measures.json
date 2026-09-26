@@ -1,0 +1,37 @@
+[
+  {
+    "id": "technical",
+    "label": "Technical",
+    "ja": "技術・到達性",
+    "purpose": "機械が情報へ到達できる状態をつくる。",
+    "examples": "クロール、index、内部リンク、URL、ページ構造、rendering"
+  },
+  {
+    "id": "semantic",
+    "label": "Semantic / Entity",
+    "ja": "意味・主体",
+    "purpose": "誰の・何についての情報かを明確にする。",
+    "examples": "title、H1、見出し、会社名、職種、勤務地、構造化データ"
+  },
+  {
+    "id": "content",
+    "label": "Content",
+    "ja": "内容・回答力",
+    "purpose": "求職者の問いに答えられる具体的な情報を持つ。",
+    "examples": "仕事内容、働き方、給与、休日、研修、FAQ、比較、具体例"
+  },
+  {
+    "id": "evidence",
+    "label": "Evidence / Trust",
+    "ja": "根拠・信頼",
+    "purpose": "その情報を回答材料として採用してよい根拠を与える。",
+    "examples": "具体的数値、更新日、対象期間、一次情報、運営主体、出典"
+  },
+  {
+    "id": "external",
+    "label": "External / Web",
+    "ja": "外部・Web全体",
+    "purpose": "自社サイト外にも関係性や裏付けを持つ。",
+    "examples": "第三者言及、被リンク、求人媒体、業界媒体、公的情報"
+  }
+]
