@@ -3,266 +3,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="企業の採用サイトをテーマに、AI検索とLLMOの仕組みを分かりやすく学ぶデジタル科学館。">
-  <title>AI検索と採用サイト｜デジタル科学館</title>
+  <meta name="description" content="採用サイトのLLMO施策を、AIが情報を使う視点とサイト側の施策の関係から一枚のマップで理解するインタラクティブガイド。">
+  <title>LLMO MAP｜AI検索 × 採用サイト</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <button class="mobile-menu-button" id="mobile-menu-button" aria-label="メニューを開く" aria-expanded="false">メニュー</button>
-
-  <aside class="sidebar" id="sidebar" aria-label="サイト内ナビゲーション">
-    <div class="brand">
-      <span class="brand-kicker">採用サイトで学ぶ</span>
-      <a href="#top" class="brand-title">AI検索とLLMO</a>
-      <span class="brand-sub">デジタル科学館</span>
+  <header class="topbar">
+    <div class="topbar-brand">
+      <strong>LLMO MAP</strong>
+      <span>AI検索 × 採用サイト</span>
     </div>
-    <nav class="global-nav">
-      <a href="#overview">全体像</a>
-      <a href="#change">AI検索って？</a>
-      <a href="#actors">求職者・AI・採用サイト</a>
-      <a href="#search-journey">AIの検索Journey</a>
-      <a href="#gates">6つの関門</a>
-      <a href="#llmo">LLMO施策</a>
-      <a href="#matrix">施策マップ</a>
-      <a href="#examples">具体例</a>
-      <a href="#glossary">用語集</a>
-    </nav>
-    <div class="sidebar-note">
-      <strong>見方のコツ</strong>
-      <span>まず日本語の大見出しだけ追っても大丈夫です。専門用語は必要なときだけ開けます。</span>
+    <div class="topbar-actions">
+      <button type="button" class="text-button" data-open-info="about">このマップについて</button>
+      <button type="button" class="text-button" data-open-info="recruitment">採用サイトの範囲</button>
     </div>
-  </aside>
+  </header>
 
-  <main id="top">
-    <section class="hero section-dark">
-      <div class="section-inner hero-inner">
-        <p class="eyebrow">企業の採用サイトをテーマにしたAI検索入門</p>
-        <h1>「自分に合う仕事を探して」<br>とAIに聞いたとき、<br><span>あなたの会社は候補になれる？</span></h1>
-        <p class="hero-lead">AI検索の仕組みをひもときながら、採用情報を「見つけてもらい、理解してもらい、正しく伝えてもらう」ための考え方を、科学館の展示のようにたどります。</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#overview">30秒で全体を見る</a>
-          <a class="button ghost" href="#matrix">施策マップを見る</a>
-        </div>
+  <main class="app-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">AI側の内情と、LLMO施策のつながりを見る</p>
+        <h1 id="page-title">AIは何を見ている？<br>サイト側は何を整える？</h1>
+      </div>
+      <p class="intro-copy">LLMOを一つのテクニックではなく、AIがWeb上の情報を利用しやすい状態へ整える取り組みとして、一枚の地図で見てみます。</p>
+    </section>
+
+    <section class="query-bridge" aria-label="AI内部処理と情報発信側の接点">
+      <div class="query-step">
+        <span>検索者</span>
+        <strong>自然な言葉で質問</strong>
+      </div>
+      <span class="query-arrow">→</span>
+      <div class="query-step muted">
+        <span>AI内部</span>
+        <strong>問いを理解・分解・検索へ変換</strong>
+      </div>
+      <span class="query-arrow">→</span>
+      <div class="query-step active">
+        <span>ここから</span>
+        <strong>情報発信側との接点</strong>
       </div>
     </section>
 
-    <section id="overview" class="content-section">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">全体像</span>
-          <h2>LLMOは「AIに好かれる文章」を書くことではありません</h2>
-          <p>発信した採用情報が、AIを介して求職者へ届くまでの途中で、情報が落ちたり、誤解されたり、使いにくくなったりする。その損失を減らすための情報設計として捉えます。</p>
+    <section class="museum-panel" aria-label="LLMO施策マップ">
+      <div class="panel-head">
+        <div>
+          <h2>LLMO MAP</h2>
+          <p>上下の「AIの視点」と左右の「サイト側の施策」を、同じ位置関係のまま切り替えます。</p>
         </div>
+        <div class="mode-tabs" role="tablist" aria-label="表示モード">
+          <button type="button" role="tab" data-mode="ai" aria-selected="false">AIが見ていること</button>
+          <button type="button" role="tab" data-mode="site" aria-selected="false">サイト側の施策</button>
+          <button type="button" role="tab" data-mode="map" aria-selected="true" class="active">関係マップ</button>
+        </div>
+      </div>
 
-        <div class="flow-strip" aria-label="情報流通の全体像">
-          <div class="flow-node">
-            <span class="flow-icon">1</span>
-            <strong>求職者</strong>
-            <small>希望や事情を相談</small>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-node">
-            <span class="flow-icon">2</span>
-            <strong>AI</strong>
-            <small>問いを理解して探索</small>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-node">
-            <span class="flow-icon">3</span>
-            <strong>Web</strong>
-            <small>求人・採用情報を取得</small>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-node">
-            <span class="flow-icon">4</span>
-            <strong>AI</strong>
-            <small>比較・抽出・回答</small>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-node">
-            <span class="flow-icon">5</span>
-            <strong>求職者</strong>
-            <small>理解・比較・行動</small>
-          </div>
-        </div>
+      <div class="mode-caption" id="mode-caption" aria-live="polite"></div>
 
-        <div class="definition-card">
-          <span class="definition-label">このサイトでのLLMO</span>
-          <p>Web上に公開した情報がAIによって「発見・理解・関連付け・抽出・検証・再表現」される過程で生じる情報損失を減らし、求職者へ正確かつ有用に届く確率を高めるための取り組み。</p>
-          <small>※「6つの関門」などは、このサイトで理解しやすく整理した説明モデルです。</small>
-        </div>
+      <div class="map-viewport">
+        <div id="map-grid" class="map-grid mode-map" aria-live="polite"></div>
+      </div>
+
+      <div class="legend" id="legend">
+        <span><i class="heat heat-3">◎</i> 強く関係</span>
+        <span><i class="heat heat-2">○</i> 関係</span>
+        <span><i class="heat heat-1">△</i> 間接的に関係</span>
+        <small>※上下の並びは理解のための整理であり、AI内部の厳密な処理順を示すものではありません。</small>
       </div>
     </section>
 
-    <section id="change" class="content-section section-tint">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">AI検索って何が変わった？</span>
-          <h2>「リンクを探す」から「答えを組み立てる」へ</h2>
-          <p>昔の検索も実際には高度でしたが、違いをつかむために単純化して比べてみます。</p>
-        </div>
-
-        <div class="compare-grid">
-          <article class="compare-card">
-            <span class="compare-label">従来検索を単純化すると</span>
-            <h3>検索語 → ページ</h3>
-            <ol>
-              <li>検索語を入力する</li>
-              <li>検索結果が並ぶ</li>
-              <li>人がページを読む</li>
-              <li>人が比較する</li>
-              <li>人が答えをつくる</li>
-            </ol>
-          </article>
-          <article class="compare-card featured">
-            <span class="compare-label">AI検索</span>
-            <h3>目的 → 探索 → 回答</h3>
-            <ol>
-              <li>自然な言葉で目的を伝える</li>
-              <li>AIが問いや条件を理解する</li>
-              <li>複数方向から候補を探す</li>
-              <li>AIが読み、比較する</li>
-              <li>回答としてまとめる</li>
-            </ol>
-          </article>
-        </div>
-      </div>
+    <section class="bottom-note">
+      <button type="button" class="note-card" data-open-info="recruitment">
+        <span>このマップでいう「採用サイト」</span>
+        <strong>求人票だけではありません</strong>
+        <small>求人情報、会社・職場情報、制度、職種解説、キャリア記事、働き方の記事まで含めて考えます。</small>
+      </button>
+      <button type="button" class="note-card" data-open-info="model">
+        <span>このマップの位置づけ</span>
+        <strong>「検索順位表」ではなく説明モデル</strong>
+        <small>各視点や施策は実際には重なり合います。◎○△は、関係を理解するための整理です。</small>
+      </button>
     </section>
-
-    <section id="actors" class="content-section">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">求職者・AI・採用サイト</span>
-          <h2>会社名を知らない人にも、候補として見つけてもらえるか</h2>
-          <p>このサイトでは、「すでに会社名を知っている検索」より一段手前の探索を主役にします。</p>
-        </div>
-
-        <div class="query-card">
-          <span class="speech-label">求職者</span>
-          <blockquote>「千葉で、未経験から始められて、土日休み。できれば残業が少ない事務職を探したい」</blockquote>
-        </div>
-
-        <div class="journey-cards">
-          <article><span>01</span><h3>探す</h3><p>会社も求人もまだ決まっていない。</p></article>
-          <article><span>02</span><h3>比べる</h3><p>条件に合う候補を比較する。</p></article>
-          <article><span>03</span><h3>確かめる</h3><p>気になる求人の詳細を確認する。</p></article>
-          <article><span>04</span><h3>決める</h3><p>給与や応募条件を確認し応募判断へ。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="search-journey" class="content-section section-tint">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">AIの検索Journey</span>
-          <h2>AIは、ひとつの検索語だけで一直線に探すとは限りません</h2>
-          <p>実際の仕組みはサービスごとに異なります。ここでは、複数のAI検索に共通しやすい流れを平易に表します。</p>
-        </div>
-
-        <div class="search-journey-list">
-          <article><b>1</b><div><h3>問いを理解する</h3><p>「この人は何を探している？」</p></div></article>
-          <article><b>2</b><div><h3>探し方を考える</h3><p>「どんな言葉や方向から探せばよい？」</p></div></article>
-          <article><b>3</b><div><h3>候補情報を見つける</h3><p>「関係ありそうな情報はどこ？」</p></div></article>
-          <article><b>4</b><div><h3>候補を選ぶ</h3><p>「この中で質問に近いのはどれ？」</p></div></article>
-          <article><b>5</b><div><h3>必要な事実を読み取る</h3><p>「答えになる情報はどこ？」</p></div></article>
-          <article><b>6</b><div><h3>比較・確認する</h3><p>「この情報を使って大丈夫？」</p></div></article>
-          <article><b>7</b><div><h3>回答をつくる</h3><p>「意味を壊さず、どう伝えればよい？」</p></div></article>
-        </div>
-        <p class="loop-note">情報が足りなければ、AIは探し方を変えて再検索することがあります。</p>
-      </div>
-    </section>
-
-    <section id="gates" class="content-section">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">情報が届くまでの6つの関門</span>
-          <h2>公開しただけでは、AI回答まで届くとは限りません</h2>
-          <p>6つの問いをすべて通過できるか、というモデルで情報損失を考えます。</p>
-        </div>
-        <div id="gates-grid" class="gates-grid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="llmo" class="content-section section-tint">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">LLMOって何をするの？</span>
-          <h2>施策を「何のためにやるか」で5つに分ける</h2>
-          <p>一つの施策が複数の関門に効くため、施策名ではなく役割から理解します。</p>
-        </div>
-        <div id="measures-grid" class="measures-grid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="matrix" class="content-section">
-      <div class="section-inner wide">
-        <div class="section-heading">
-          <span class="step-label">施策 × 関門マップ</span>
-          <h2>どの施策が、どの関門を助ける？</h2>
-          <p>◎・○・△をクリックすると、その組み合わせで「AIが見ていること」と「採用サイト側でできること」を確認できます。</p>
-        </div>
-
-        <div class="legend" aria-label="ヒートマップ凡例">
-          <span><i class="heat heat-3">◎</i> 強く関係</span>
-          <span><i class="heat heat-2">○</i> 関係</span>
-          <span><i class="heat heat-1">△</i> 間接的</span>
-        </div>
-
-        <div class="matrix-scroll">
-          <div id="matrix-container"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="examples" class="content-section section-tint">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">良い例・惜しい例</span>
-          <h2>「人にもAIにも分かりやすい」は、だいたい同じ方向です</h2>
-        </div>
-
-        <div class="example-grid">
-          <article class="example-card">
-            <h3>休日</h3>
-            <div class="example bad"><span>惜しい</span><p>休日もしっかり取れる職場です。</p></div>
-            <div class="example good"><span>明確</span><p>年間休日125日。土日祝休みです。</p></div>
-          </article>
-          <article class="example-card">
-            <h3>給与</h3>
-            <div class="example bad"><span>惜しい</span><p>経験に応じて給与を決定します。</p></div>
-            <div class="example good"><span>明確</span><p>月給25万円～30万円。経験・能力を考慮して決定します。</p></div>
-          </article>
-          <article class="example-card">
-            <h3>働き方</h3>
-            <div class="example bad"><span>惜しい</span><p>家庭と両立しやすい環境です。</p></div>
-            <div class="example good"><span>明確</span><p>残業は月平均5時間未満。時短勤務は相談可能です。</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="glossary" class="content-section">
-      <div class="section-inner">
-        <div class="section-heading">
-          <span class="step-label">用語集</span>
-          <h2>英単語は「覚えるもの」ではなく、詳しく調べるための索引</h2>
-          <p>日本語を主役にし、専門語は必要な人が深掘りできるよう補助表示します。</p>
-        </div>
-        <div id="glossary-grid" class="glossary-grid"></div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="section-inner">
-        <p>AI検索とLLMOを、採用サイトを題材に分かりやすく考えるための学習サイト。</p>
-        <p class="footer-note">検索システムの内部実装はサービスごとに異なります。本サイトでは公開情報と一般的な検索技術をもとに、理解のためのモデルとして整理しています。</p>
-      </div>
-    </footer>
   </main>
 
   <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
   <aside class="detail-drawer" id="detail-drawer" aria-hidden="true" aria-labelledby="drawer-title">
-    <button class="drawer-close" id="drawer-close" aria-label="詳細を閉じる">×</button>
+    <button class="drawer-close" id="drawer-close" type="button" aria-label="詳細を閉じる">×</button>
     <div id="drawer-content"></div>
   </aside>
 
